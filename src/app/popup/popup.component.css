@@ -1,0 +1,12 @@
+div {
+    border: 1px solid #eee;
+    align-items: center;
+    text-align: center;
+    place-content: center;
+    vertical-align: middle;
+    
+}
+
+h2 {
+    color: blueviolet;
+}

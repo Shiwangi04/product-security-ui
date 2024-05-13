@@ -1,0 +1,10 @@
+<mat-grid-list cols="2" rowHeight="2:1">
+    <ng-container *ngIf="data.images && data.images.length > 0; else noImageTemplate">
+        <mat-grid-tile *ngFor="let fileHandle of data.images">
+            <img [src]="fileHandle.url" width="150px" height="150px">
+        </mat-grid-tile>
+    </ng-container>
+    <ng-template #noImageTemplate>
+        <p>No Image to display!!</p>
+      </ng-template> 
+  </mat-grid-list>

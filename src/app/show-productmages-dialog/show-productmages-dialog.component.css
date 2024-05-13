@@ -1,0 +1,11 @@
+mat-grid-tile {
+    border: 1px solid #eee;
+}
+
+p {
+    text-align: center;
+    place-content: center;
+    vertical-align: middle;
+    padding-top: 30%;
+    font-size: x-large;
+}
