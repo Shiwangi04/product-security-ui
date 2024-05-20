@@ -10,6 +10,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { Router } from '@angular/router';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-home',
@@ -20,13 +21,21 @@ import { MatInputModule } from '@angular/material/input';
 })
 export class HomeComponent implements OnInit{
 
+  public isMobile: boolean = false;
   pageNumber: number = 0;
   productDetails: Product[] = [];
 
   showLoadButton : boolean = false;
   constructor(private productService: ProductService,
      private imageProcessingService: ImageProcessingService,
-    private router: Router) {}
+    private router: Router,
+    breakpointObserver: BreakpointObserver) {
+      breakpointObserver.observe([
+        Breakpoints.Handset
+      ]).subscribe(result => {
+        this.isMobile = result.matches;
+      });
+    }
   ngOnInit(): void {
     this.getAllProducts(this.pageNumber);
   }

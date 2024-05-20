@@ -11,6 +11,9 @@ import { Order } from '../_model/order.model';
 export class ProductService {
 
   PATH_OF_API = "http://localhost:9090";
+ // PATH_OF_API = " http://192.168.49.2:30200";
+ //PATH_OF_API = "http://ec2-3-8-133-131.eu-west-2.compute.amazonaws.com:9090";
+
   constructor(private httpClient: HttpClient) { }
 
   public addProduct(product: FormData){

@@ -6,12 +6,12 @@
     <mat-hint>Search any product</mat-hint>
 </mat-form-field>  
   
-  <mat-grid-list cols="4" rowHeight="3:5" gutterSize="10">
+  <mat-grid-list rowHeight="3:5" gutterSize="10" [cols]="isMobile ? 1 : 4">
         <mat-grid-tile *ngFor="let p of productDetails">
           <div class="row p-5">
             <div class="image-container">
               <ng-container *ngIf="p.productImages && p.productImages.length > 0; else noImageTemplate">
-                <img class="home-page-product-image" [src]="p.productImages[0].url">
+                <img class="home-page-product-image" [src]="p.productImages[0].url" >
               </ng-container>
               <ng-template #noImageTemplate>
                   <p>No Image to display!!</p>

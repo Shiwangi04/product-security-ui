@@ -8,6 +8,8 @@ import { UserAuthService } from './user-auth.service';
 export class UserService {
 
   PATH_OF_API = "http://localhost:9090";
+  //PATH_OF_API = "http://192.168.49.2:30200";
+  //PATH_OF_API = "http://ec2-3-8-133-131.eu-west-2.compute.amazonaws.com:9090";
 
   requestHeader = new HttpHeaders(
     { "No-Auth": "True" }
